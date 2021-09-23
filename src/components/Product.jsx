@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Product = ({ product }) => {
+const Product = ({ product, handleAddToCart }) => {
 
    const { image, title, price, description } = product
 
@@ -14,8 +14,8 @@ const Product = ({ product }) => {
             </h2>
             <p>{description}</p>
          </div>
-
-         <button type="button">Comprar</button>
+         {/* usamos esta forma de referencia ala funcion handleAddToCart pero no estamos ejecutando esta funcion esta devolviendo una funcion */}
+         <button type="button" onClick={handleAddToCart(product)}>Comprar</button>
       </div>
    )
 }
