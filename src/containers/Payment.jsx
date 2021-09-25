@@ -2,7 +2,7 @@
 
 import React, { useContext } from 'react'
 import { useHistory } from 'react-router-dom'
-import { PayPalButton } from 'react-paypal-button-v2'
+import { PayPalButton } from 'react-paypal-button-v2' // compopnente de tercero buscar en npm
 import AppContext from '../context/AppContext'
 import '../styles/components/Payment.css'
 
@@ -33,9 +33,7 @@ const Payment = () => {
 
    const handlePaymentSuccess = (data) => {
 
-      console.log(data)
-
-      // revisamos si fue existoso el pao
+      // revisamos si fue existoso el paso, esto lo asemos por que ya probamos que datos viene y asi podemos validar
       if (data.status === 'COMPLETED') {
 
          // creamos la orden que guardaremos en nuestro context
