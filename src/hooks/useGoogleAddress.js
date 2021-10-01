@@ -1,4 +1,7 @@
 // recordar que devemos poner la tarjeta de credito en nuestro google console para activar esta api
+
+// si queremos podemos usar esta otra opcion: https://positionstack.com/
+
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
