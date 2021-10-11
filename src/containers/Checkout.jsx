@@ -1,4 +1,5 @@
 import React, { useContext } from 'react'
+import { Helmet } from 'react-helmet'
 import { Link } from 'react-router-dom'
 import AppContext from '../context/AppContext'
 
@@ -18,40 +19,45 @@ const Checkout = () => {
 
       const reducer = (acumulator, currenValue) => acumulator + currenValue.price
 
-      return cart.reduce(reducer, 0)
+      return cart.reduce(reducer,)
    }
 
    return (
-      <div className="Checkout">
+      <>
+         <Helmet>
+            <title>Lista de pedidos - Platzi Conf Merch</title>
+         </Helmet>
+         <div className="Checkout">
 
-         <div className="Checkout-content">
+            <div className="Checkout-content">
 
-            <h3>{(cart.length > 0) ? 'Lista de Pedidos:' : 'Sin pedidos..'}</h3>
+               <h3>{(cart.length > 0) ? 'Lista de Pedidos:' : 'Sin pedidos..'}</h3>
 
-            {cart.map((item, x) => (
-               <div className="Checkout-item" key={x}>
-                  <div className="Checkout-element">
-                     <h4>{item.title}</h4>
-                     <span>${item.price}</span>
+               {cart.map((item, x) => (
+                  <div className="Checkout-item" key={x}>
+                     <div className="Checkout-element">
+                        <h4>{item.title}</h4>
+                        <span>${item.price}</span>
+                     </div>
+                     <button type="button" onClick={handleRemove(x)}> <i className="fas fa-trash-alt" /> </button>
                   </div>
-                  <button type="button" onClick={handleRemove(x)}> <i className="fas fa-trash-alt" /> </button>
-               </div>
-            ))}
-
-         </div>
-
-         {(cart.length > 0) && (
-            <div className="Checkout-sidebar">
-               <h3>Precio Total: ${handleSumTotal()}</h3>
-               <Link to="/checkout/information">
-                  <button type="button">Continuar pedido</button>
-               </Link>
+               ))}
 
             </div>
-         )}
+
+            {(cart.length > 0) && (
+               <div className="Checkout-sidebar">
+                  <h3>Precio Total: ${handleSumTotal()}</h3>
+                  <Link to="/checkout/information">
+                     <button type="button">Continuar pedido</button>
+                  </Link>
+
+               </div>
+            )}
 
 
-      </div>
+         </div>
+      </>
    )
 }
 

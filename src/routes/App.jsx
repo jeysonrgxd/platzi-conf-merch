@@ -21,6 +21,9 @@ const App = () => {
 
    // utilizamos el custom hook para poder obtener nuestro estado con sus acciones de cambio (funciones) y se lo pasamos a nuestro provider
    const initialState = useInitialState()
+   // const isEmpty = Object.keys(initialState).length
+
+   // if(isEmpty>=4)
 
    return (
       <AppContext.Provider value={initialState} >

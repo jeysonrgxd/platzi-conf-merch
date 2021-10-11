@@ -6,6 +6,9 @@ const Product = ({ product, handleAddToCart }) => {
 
    return (
       <div className="Products-item">
+         {/* esto es cuando utilizamos strapy 
+            <img src={`http://localhost:1337${image[0].url}`} alt="" /> 
+         */}
          <img src={image} alt="" />
 
          <div className="Product-item-info">

@@ -4,9 +4,10 @@ import '../styles/components/Products.css'
 import AppContext from '../context/AppContext';
 
 const Products = () => {
-   const { state, addToCart } = useContext(AppContext)
 
-   const { products } = state
+   const { products, addToCart } = useContext(AppContext)
+
+   // const { products } = state
 
    // esta forma asemos que devuelva una funcion para que sea pasado a un componente que esta referencia ala funcion devuelva una funcion
    const handleAddToCart = product => () => {
